@@ -1,0 +1,20 @@
+{
+  "name": "@doaaki/shared",
+  "version": "1.0.0",
+  "private": true,
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch"
+  },
+  "exports": {
+    "./types": "./dist/types/index.js",
+    "./data": "./dist/data/index.js",
+    "./utils": "./dist/utils/index.js",
+    "./constants": "./dist/constants/index.js"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.0"
+  }
+}
