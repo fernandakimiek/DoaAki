@@ -1,6 +1,6 @@
 import { ArrowLeft, Send, Calendar, Check, X } from 'lucide-react';
 import { useState } from 'react';
-import { useNavigate, useParams } from 'react-router';
+import { useNavigate, useParams } from 'react-router-dom';
 import { donationItems } from '@doaaki/shared/data';
 
 interface Message {

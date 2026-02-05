@@ -1,5 +1,5 @@
 import { Home, MessageCircle, User } from 'lucide-react';
-import { Link, useLocation } from 'react-router';
+import { Link, useLocation } from 'react-router-dom';
 
 export function BottomNav() {
   const location = useLocation();

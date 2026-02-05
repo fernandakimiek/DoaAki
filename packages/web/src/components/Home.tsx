@@ -1,6 +1,6 @@
 import { Search, Armchair, Shirt, Gamepad2, Laptop, MapPin, Plus, SlidersHorizontal } from 'lucide-react';
 import { useState } from 'react';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import Masonry from 'react-responsive-masonry';
 import { donationItems } from '@doaaki/shared/data';
 import { categories } from '@doaaki/shared/constants';

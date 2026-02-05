@@ -1,6 +1,6 @@
 import { ArrowLeft, Star, Award, Leaf, Heart, Package, MessageCircle, Settings, MapPin } from 'lucide-react';
 import { useState } from 'react';
-import { useNavigate } from 'react-router';
+import { useNavigate } from 'react-router-dom';
 
 type TabType = 'doados' | 'recebidos';
 

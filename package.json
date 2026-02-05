@@ -2,15 +2,25 @@
   "name": "doaaki-workspace",
   "version": "1.0.0",
   "private": true,
+  "packageManager": "npm@10.9.0",
   "workspaces": [
     "packages/*"
   ],
   "scripts": {
-    "web:dev": "npm run dev --workspace=packages/web",
-    "web:build": "npm run build --workspace=packages/web",
-    "mobile:android": "npm run android --workspace=packages/mobile",
-    "mobile:ios": "npm run ios --workspace=packages/mobile",
-    "mobile:start": "npm run start --workspace=packages/mobile",
-    "shared:build": "npm run build --workspace=packages/shared"
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "web:dev": "turbo run dev --filter=web",
+    "web:build": "turbo run build --filter=web",
+    "mobile:android": "turbo run android --filter=mobile",
+    "mobile:ios": "turbo run ios --filter=mobile",
+    "mobile:start": "turbo run start --filter=mobile",
+    "shared:build": "turbo run build --filter=@doaaki/shared",
+    "lint": "turbo run lint",
+    "test": "turbo run test"
+  },
+  "devDependencies": {
+    "@babel/code-frame": "^7.29.0",
+    "@types/react-native-vector-icons": "^6.4.18",
+    "turbo": "^2.3.0"
   }
 }

@@ -1,6 +1,6 @@
 import { ArrowLeft, Upload, Check, MapPin, Clock } from 'lucide-react';
 import { useState } from 'react';
-import { useNavigate } from 'react-router';
+import { useNavigate } from 'react-router-dom';
 import { categories } from '@doaaki/shared/constants';
 
 type Step = 1 | 2 | 3;

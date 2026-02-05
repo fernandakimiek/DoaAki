@@ -1,5 +1,5 @@
 import { ArrowLeft, Search } from 'lucide-react';
-import { Link, useNavigate } from 'react-router';
+import { Link, useNavigate } from 'react-router-dom';
 import { donationItems } from '@doaaki/shared/data';
 
 export function MessagesList() {

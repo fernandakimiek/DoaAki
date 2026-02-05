@@ -1,6 +1,6 @@
 # DoaAki Workspace
 
-Monorepo contendo o projeto DoaAki Marketplace com versões Web e Mobile.
+Monorepo contendo o projeto DoaAki Marketplace com versões Web e Mobile. Utiliza **npm workspaces** para gerenciamento de pacotes e **Turborepo** para orquestração de tarefas, cache e ordem de execução entre os pacotes.
 
 ## Estrutura do Projeto
 
@@ -29,10 +29,20 @@ npm install
 
 ## Scripts Disponíveis
 
+Os comandos são executados via Turborepo. O build do pacote `@doaaki/shared` é disparado automaticamente quando necessário (por exemplo, antes de `web:build` ou ao rodar `web:dev` / `mobile:start`).
+
+### Geral
+```bash
+npm run build    # Build de todos os pacotes (shared primeiro, depois web)
+npm run dev      # Inicia dev em todos os pacotes que têm script dev
+npm run lint     # Roda lint nos pacotes que possuem o script
+npm run test     # Roda testes nos pacotes que possuem o script
+```
+
 ### Web
 ```bash
-npm run web:dev      # Inicia servidor de desenvolvimento
-npm run web:build    # Build de produção
+npm run web:dev      # Inicia servidor de desenvolvimento (shared é buildado antes se necessário)
+npm run web:build   # Build de produção
 ```
 
 ### Mobile
@@ -44,7 +54,7 @@ npm run mobile:ios       # Executa no iOS
 
 ### Shared
 ```bash
-npm run shared:build    # Compila o pacote shared
+npm run shared:build    # Compila apenas o pacote shared
 ```
 
 ## Desenvolvimento
@@ -83,6 +93,10 @@ O pacote `@doaaki/shared` contém:
 - Geolocalização nativa
 - Mapas nativos (react-native-maps)
 - Notificações push (preparado para implementação)
+
+## Turborepo
+
+O cache do Turborepo (pasta `.turbo`) armazena resultados de tarefas como `build` e `lint`. Em execuções seguintes, tarefas cujos arquivos não mudaram são restauradas do cache, acelerando o fluxo. Tarefas longas como `dev` e `start` não usam cache (`cache: false`, `persistent: true`).
 
 ## Tecnologias
 
